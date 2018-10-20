@@ -1,0 +1,233 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+body{
+
+  background-color: #ebebe6;
+  /* font-family: "Roboto", sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+  min-width: 634px;
+
+}
+
+p{
+  text-align: justify;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+/***********************************************Nav bar******************************************/
+
+.custom-navbar-search-bar{
+  width: 300px !important;
+}
+
+.navbar-brand{
+  color: white !important;
+}
+
+  .btn-custom-white{
+    -moz-box-shadow: 0 0 6px #212121;
+    -webkit-box-shadow: 0 0 6px #212121;
+    box-shadow: 0 0 6px #212121;
+    transition: 0.5s;
+    background-color: white;
+    /* color: var(--main-bg-color); */
+  }
+  .btn-custom-white:hover{
+    -moz-box-shadow: 0 0 6px #212121;
+    -webkit-box-shadow: 0 0 6px #212121;
+    box-shadow: 0 0 6px #212121;
+    background: #64B5F6;
+  }
+  .search-button{
+    width: 90px;
+  }
+
+.bg-custom{
+  /* background-color:#f4f4f4; */
+  background-color: #1a1a1a;
+}
+
+.nav-link{
+  outline: none;
+}
+.custom-navbar-items li a{
+  font-size: 1.25em;
+  color: white !important;
+}
+
+.custom-navbar-items > li{
+    /* display: block; */
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+.active-tab{
+  border-bottom: 3px solid white;
+}
+.not-active:hover{
+  border-bottom: 3px solid white;
+}
+  /* .custom-navbar-items li:hover{
+    border-bottom: 3px solid white;
+  } */
+
+
+
+/* dropdown */
+.dropdown-menu{
+  background-color: #262626 !important;
+}
+.dropdown-menu a:hover{
+  background-color: #3c3c3c !important;
+}
+
+/* .dropdown-menu  */
+
+
+/* search bar */
+.custom-select > option{
+  outline: none;
+}
+
+  /***********************************************user login form******************************************/
+
+
+
+.custom-login-container{
+  margin: 0 auto;
+  width: 700px;
+
+  padding: 40px;
+}
+
+
+/***********************************************Learn Page******************************************/
+  .video-text{
+    padding: 20px;
+  }
+  .learn-page-ptag{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .learn-pagination {
+   justify-content: center;
+  }
+
+/************************************************Explore Page******************************************/
+.tales {
+  width: 100%;
+}
+.carousel-inner{
+  width:100%;
+  max-height: 400px !important;
+}
+.card{
+  transition: box-shadow 0.7s;
+}
+.card:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  /* transition: 0.6s ease-out; */
+}
+
+x-star-rating{
+  font-family: 'Ionicons';
+  font-size: 20px;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+x-star-rating > .star::after{
+  content: '\f3ae';
+  color: #FF6F00;
+}
+
+x-star-rating > .star.full::after{
+  content: '\f2fc';
+  color: #FF6F00;
+}
+
+x-star-rating > .star.half-star::after{
+    content: '\f3ad';
+    color: #FF6F00;
+}
+
+/************************************************cart Page******************************************/
+.cart-social-media{
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.cart-social-media{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.fa{
+  padding: 3px;
+}
+
+.fa:hover{
+  transform: scale(1.2);
+}
+.fa-youtube{
+  color: #cd201f;
+}
+.fa-facebook-official{
+  color: #3b5999;
+}
+.fa-font-size{
+  font-size: 1.83em;
+}
+.fa-instagram{
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  border-radius: 40px;
+}
+.fa-twitter{
+  color: #55acee;
+}
+.item-quantity{
+  width: 50px;
+  text-align: center;
+}
+.item-quantity-buttons{
+  transition: background-color 0.7s;
+}
+.item-quantity-buttons:hover{
+  background-color: #03ce5f;
+  color: white;
+}
+.card-page-title{
+  padding-top:20px;
+}
+.cart-page-image{
+  width: 100%;
+  height: 400px;
+  margin-top: 20px;
+}
+
+.about-this-header{
+  margin-top:50px;
+  font-size:4em;
+}
+/* favourite button starts here*/
+.mg-left-10{
+  margin-left: 10px;
+}
+.fa-heart{
+  color: #15a8f1;
+  transition: color 1s;
+}
+.fa-heart:hover{
+  color: #FF0266;
+}
+
+/* favourite button endss here*/
+
+
+/************************************************footer design******************************************/
+.footer{
+  margin-top: 50px;
+  height: 300px;
+  background-color: #808b96;
+}

@@ -1,0 +1,46 @@
+custom-tag{
+  color: green;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.card-view{
+    border: 1px solid gray;
+    box-shadow: 1px 1px 3px #888;
+}
+
+.btn-full-width{
+  width: 100%;
+}
+
+.mg-tp-80{
+  margin-top: 80px;
+}
+
+.hide-overflow-x{
+  overflow-x: hidden;
+}
+
+.explore-card{
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.line-division{
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dashboard-background{
+  background-color: #f7f9fa;
+}
+
+.remove-a-dec{
+  color: inherit;
+}
+.remove-a-dec:hover{
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}

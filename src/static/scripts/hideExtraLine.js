@@ -1,0 +1,1 @@
+$(".hide-text-length").dotdotdot();
