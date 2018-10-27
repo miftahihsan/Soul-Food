@@ -13,7 +13,7 @@
   if($_SESSION['logged_in'] == "true"){
     echo '<nav class=" navbar navbar-expand-md navbar-dark bg-custom navbar-inverse my-custom-navbar">';
 
-        echo '<a class="navbar-brand" href="#"><img class="" src=""  alt="">Soul Cook</a>';
+        echo '<a class="navbar-brand" href="#"><img src="webLogo.jpg"  alt="Soul Food"></a>';
         echo '<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">';
           echo '<span class="navbar-toggler-icon"></span>';
         echo '</button>';

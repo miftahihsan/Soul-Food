@@ -8,6 +8,10 @@ custom-tag{
     box-shadow: 1px 1px 3px #888;
 }
 
+.text-center{
+  text-align: center;
+}
+
 .btn-full-width{
   width: 100%;
 }
@@ -33,7 +37,12 @@ custom-tag{
 }
 
 .dashboard-background{
+  /* original color */
   background-color: #f7f9fa;
+  background-color: white;
+
+  /* new testign color */
+  /* background-color: #ebebe6; */
 }
 
 .remove-a-dec{

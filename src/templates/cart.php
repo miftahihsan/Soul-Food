@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Login Page</title>
+    <title>Cart</title>
 
     <!-- star icon link -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -56,12 +56,12 @@
 
                <!-- Stars end here -->
 
-               <p>256 reviews | <a class="remove-a-dec" href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">write a review</a> </p>
+               <p>256 reviews | <a class="remove-a-dec" style="color:#1067f2;font-weight: 900;" href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">write a review</a> </p>
 
                <p><b>Location : </b> Dhanmondi Dhaka </p>
                <hr>
                <custom-tag><h1>&#2547; 346</h1></custom-tag>
-               <p><b>Cook Name: </b> <a class="remove-a-dec" href="#">Miftah</a></p>
+               <p><b>Cook Name : </b> <a class="remove-a-dec" style="color:#1067f2;font-weight: 900;" href="#">Miftah Ihsan</a></p>
                <p><b>Disocunt : </b> 50% </p>
                <hr>
 
@@ -95,6 +95,8 @@
              </div>
 
            </div>
+
+           <hr>
 
          <h1 class="about-this-header">About this</h1>
          <hr>

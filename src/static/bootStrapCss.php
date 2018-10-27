@@ -6,6 +6,9 @@
 // <!-- website title -->
 // <title>BracU Uploads</title>
 
+  // Website logo
+  echo '<link rel="icon" href="../static/images/logo/webLogo.jpg">';
+
   // <!--  CSS files bootstrap  -->
   echo '<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">';
 

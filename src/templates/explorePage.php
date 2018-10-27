@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Login Page</title>
+    <title>Explore</title>
 
     <!-- star icon -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -50,11 +50,6 @@
               <div class="carousel-item">
                 <img class="d-block w-100 img-fluid" src="../static/images/pizza.jpg" alt="Second slide">
 
-                <!-- This displays below Try to find a fix later -->
-                <!-- <div class="carousel-caption d-none d-md-block">
-                  <h5>Burger</h5>
-                  <p>Avail the offer today!!</p>
-                </div> -->
               </div>
               <div class="carousel-item">
                 <img class="d-block w-100 img-fluid" src="../static/images/curry.jpg" alt="Third slide">
@@ -98,30 +93,27 @@
 
               <a class="explore-card" href="cart.php">
 
-                <img class="card-img-top" src="../static/images/pizza.jpg" alt="Card image cap">
+                <img class="card-img-top" src="../static/images/burger.jpg" alt="Card image cap">
+                <div class="overlay">
+                  <div class="text">&#2547; 346</div>
+                </div>
+
                 <div class="card-body">
                   <h5 class="card-title">Card title</h5>
                   <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
 
                   <hr>
-                  <div class = "row">
-                    <div class = "col-xs-12 col-sm-12 col-md-12 col-lg-4">
-                      <!-- stars stats here -->
-                      <x-star-rating>
+                  <!-- stars stats here -->
+                  <x-star-rating>
 
-                        <div class="star full"></div>
-                        <div class="star full"></div>
-                        <div class="star full"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
 
-                      </x-star-rating>
-                    </div>
-                    <div class = "col-xs-12 col-sm-12 col-md-12 col-lg-8">
-                      <h5>&#2547; 346</h5>
-                    </div>
-                  </div>
+                  </x-star-rating>
                   <!-- star ends here -->
                 </div>
 
@@ -140,44 +132,41 @@
 
         <?php
 
-         for ($i=0; $i < 3; $i++) {
-           echo '
-           <div class="card">
+        for ($i=0; $i < 3; $i++) {
+          echo '
+          <div class="card">
 
 
-             <a class="explore-card" href="cart.php">
+            <a class="explore-card" href="cart.php">
 
-               <img class="card-img-top" src="../static/images/burger.jpg" alt="Card image cap">
-               <div class="card-body">
-                 <h5 class="card-title">Card title</h5>
-                 <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                 <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+              <img class="card-img-top" src="../static/images/pizza.jpg" alt="Card image cap">
+              <div class="overlay">
+                <div class="text">&#2547; 346</div>
+              </div>
 
-                 <hr>
-                 <div class = "row">
-                   <div class = "col-xs-12 col-sm-12 col-md-12 col-lg-4">
-                     <!-- stars stats here -->
-                     <x-star-rating>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
 
-                       <div class="star full"></div>
-                       <div class="star full"></div>
-                       <div class="star full"></div>
-                       <div class="star"></div>
-                       <div class="star"></div>
+                <hr>
+                <!-- stars stats here -->
+                <x-star-rating>
 
-                     </x-star-rating>
-                   </div>
-                   <div class = "col-xs-12 col-sm-12 col-md-12 col-lg-8">
-                     <h5>&#2547; 346</h5>
-                   </div>
-                 </div>
-                 <!-- star ends here -->
-               </div>
+                  <div class="star full"></div>
+                  <div class="star full"></div>
+                  <div class="star full"></div>
+                  <div class="star"></div>
+                  <div class="star"></div>
 
-             </a>
+                </x-star-rating>
+                <!-- star ends here -->
+              </div>
 
-           </div>';
-         }
+            </a>
+
+          </div>';
+        }
 
          ?>
 
@@ -190,44 +179,41 @@
 
        <?php
 
-        for ($i=0; $i < 3; $i++) {
-          echo '
-          <div class="card">
+       for ($i=0; $i < 3; $i++) {
+         echo '
+         <div class="card">
 
 
-            <a class="explore-card" href="cart.php">
+           <a class="explore-card" href="cart.php">
 
-              <img class="card-img-top" src="../static/images/curry.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+             <img class="card-img-top" src="../static/images/curry.jpg" alt="Card image cap">
+             <div class="overlay">
+               <div class="text">&#2547; 346</div>
+             </div>
 
-                <hr>
-                <div class = "row">
-                  <div class = "col-xs-12 col-sm-12 col-md-12 col-lg-4">
-                    <!-- stars stats here -->
-                    <x-star-rating>
+             <div class="card-body">
+               <h5 class="card-title">Card title</h5>
+               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+               <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
 
-                      <div class="star full"></div>
-                      <div class="star full"></div>
-                      <div class="star full"></div>
-                      <div class="star"></div>
-                      <div class="star"></div>
+               <hr>
+               <!-- stars stats here -->
+               <x-star-rating>
 
-                    </x-star-rating>
-                  </div>
-                  <div class = "col-xs-12 col-sm-12 col-md-12 col-lg-8">
-                    <h5>&#2547; 346</h5>
-                  </div>
-                </div>
-                <!-- star ends here -->
-              </div>
+                 <div class="star full"></div>
+                 <div class="star full"></div>
+                 <div class="star full"></div>
+                 <div class="star"></div>
+                 <div class="star"></div>
 
-            </a>
+               </x-star-rating>
+               <!-- star ends here -->
+             </div>
 
-          </div>';
-        }
+           </a>
+
+         </div>';
+       }
 
         ?>
 

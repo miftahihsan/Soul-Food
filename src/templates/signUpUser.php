@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Login Page</title>
+    <title>Signup</title>
 
     <!-- //incudeing the style sheets here -->
     <?php

@@ -53,6 +53,9 @@
   // closing the connection
   mysqli_close($sqlCon);
 
+  // this is for google chrome only because it looses its session variables
+  session_write_close();
+
   // navigating to another page
   header("Location:http://localhost/cse_471_porject/src/templates/explorePage.php");
 
