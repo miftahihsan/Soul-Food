@@ -13,7 +13,7 @@
   if($_SESSION['logged_in'] == "true"){
     echo '<nav class=" navbar navbar-expand-md navbar-dark bg-custom navbar-inverse my-custom-navbar">';
 
-        echo '<a class="navbar-brand" href="#"><img src="webLogo.jpg"  alt="Soul Food"></a>';
+        echo '<a class="navbar-brand" href="#"><img  src=""  alt="">Soul Cook</a>';
         echo '<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">';
           echo '<span class="navbar-toggler-icon"></span>';
         echo '</button>';
@@ -62,7 +62,7 @@
 
             if(!$_SESSION['is_chef']){
               echo '<li class="nav-item active">';
-                echo '<a class="nav-link not-active" href="#">Become a Cook</a>';
+                echo '<a class="nav-link not-active" href="../templates/signUpCook.php">Become a Cook</a>';
               echo '</li>';
             }
 
@@ -75,11 +75,11 @@
               echo '<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>';
               echo '<div class="dropdown-menu">';
                 echo '<a class="dropdown-item" href="../templates/userAccount.php">My account</a>';
-                echo '<a class="dropdown-item" href="#">Favourites</a>';
-                echo '<a class="dropdown-item" href="#">History</a>';
+                echo '<a class="dropdown-item" href="../templates/userFavourite.php">Favourites</a>';
+                echo '<a class="dropdown-item" href="../templates/userHistory.php">History</a>';
                 if($_SESSION['is_chef']){
                   echo '<div role="separator" class="dropdown-divider"></div>';
-                  echo '<a class="dropdown-item" href="#">Cook Account</a>';
+                  echo '<a class="dropdown-item" href="../templates/cook_dashboard.php">Cook Account</a>';
                 }
                 // echo '<div role="separator" class="dropdown-divider"></div>';
                 // echo '<a class="dropdown-item" href="#three">three</a>';

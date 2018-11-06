@@ -59,7 +59,7 @@
 
             if(!$_SESSION['is_chef']){
               echo '<li class="nav-item active">';
-                echo '<a class="nav-link not-active" href="#">Become a Cook</a>';
+                echo '<a class="nav-link not-active" href="../templates/signUpCook.php">Become a Cook</a>';
               echo '</li>';
             }
 
@@ -76,7 +76,7 @@
                 echo '<a class="dropdown-item" href="#">History</a>';
                 if($_SESSION['is_chef']){
                   echo '<div role="separator" class="dropdown-divider"></div>';
-                  echo '<a class="dropdown-item" href="#">Cook Account</a>';
+                  echo '<a class="dropdown-item" href="../templates/cook_dashboard.php">Cook Account</a>';
                 }
                 // echo '<div role="separator" class="dropdown-divider"></div>';
                 // echo '<a class="dropdown-item" href="#three">three</a>';

@@ -23,6 +23,7 @@
      ?>
 
      <div class="container dashboard-background">
+
        <div class="row">
 
          <!-- hard coded for now -->

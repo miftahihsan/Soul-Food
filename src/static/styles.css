@@ -7,7 +7,7 @@ body{
   min-width: 634px;
 
   /* Background image */
-  background: url(images/background.jpg) repeat left top;
+  background: url(images/background/background.jpg) repeat left top;
 }
 
 p{
@@ -26,7 +26,8 @@ p{
 }
 
 .navbar-brand{
-  color: white !important;
+  /* main */
+  /* color: white !important; */
 }
 
   .btn-custom-white{
@@ -50,6 +51,7 @@ p{
 .bg-custom{
   /* background-color:#f4f4f4; */
   background-color: #1a1a1a;
+  /* background-color: #796ef4; */
 }
 
 .nav-link{
@@ -96,13 +98,38 @@ p{
 
   /***********************************************user login form******************************************/
 
-
+.btn-green{
+  background-color: #46c463;
+  color: white;
+}
 
 .custom-login-container{
   margin: 0 auto;
   width: 700px;
 
   padding: 40px;
+}
+
+
+/************************************************cook signup******************************************/
+.upload-image-btn{
+    border: 1px solid #ccc;
+    display: inline-block;
+    font-size: 1.4em;
+    border-radius: 5px;
+    color: white;
+    padding: 3px 10px;
+    margin: 7px 0px 0px 0px;
+}
+.upload-image-btn:hover{
+  background-color: #3b73cc;
+}
+.cook-image{
+  display: none;
+}
+.cook-photo-container{
+  height: 280px;
+  /* background-color: red; */
 }
 
 
@@ -264,6 +291,10 @@ x-star-rating > .star.half-star::after{
   height: 275px;
 }
 
+/************************************************User History******************************************/
+.print-btn-container button{
+  width: 100%;
+}
 
 /************************************************footer design******************************************/
 .footer{

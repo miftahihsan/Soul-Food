@@ -1,5 +1,7 @@
 <?php
 
+  include 'hideWarning.php';
+
   include_once 'dbCon.php';
 
   //email

@@ -37,12 +37,12 @@
 
              <!-- This is the div for the image -->
              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-               <img class="cart-page-image img-thumbnail" src="../static/images/burger.jpg" alt="Avatar">
+               <img class="cart-page-image img-thumbnail" src="../static/images/curry.jpg" alt="Avatar">
              </div>
 
              <!-- This is the div for the add o cart button and description -->
              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 card-page-title">
-               <h3>Pizza Square!</h3>
+               <h3>Soul Food!</h3>
                <!-- Stars stats from here -->
                <x-star-rating>
 
@@ -110,7 +110,7 @@
 
      <!-- card view here of all the high rated food of the same catagory -->
      <br>
-     <h1><custom-tag> Related </custom-tag> Search</h1>
+     <h1><custom-tag> Related </custom-tag> Posts</h1>
      <hr>
      <div class="card-deck">
 

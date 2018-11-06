@@ -12,6 +12,10 @@ custom-tag{
   text-align: center;
 }
 
+input[type="file"]{
+  display: none;
+}
+
 .btn-full-width{
   width: 100%;
 }
@@ -52,4 +56,10 @@ custom-tag{
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+}
+
+.hr-dotted{
+   border: 0;
+   border-bottom: 1px dashed #ccc;
+   background: #999;
 }

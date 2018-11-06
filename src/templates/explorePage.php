@@ -28,7 +28,7 @@
 
     <!-- // the nav bar here -->
     <?php
-      include_once '../_includes/navbar/_navBarExplore.php'
+      include_once '../_includes/navbar/_navBarExplore.php';
      ?>
 
      <!-- This is where the slider starts from -->
@@ -73,6 +73,7 @@
      <!-- This is where the slides end -->
 
 
+
      <!-- from here the display of food begins -->
      <div class="container mg-tp-80 dashboard-background">
 
@@ -80,7 +81,8 @@
 
        <h1><custom-tag>Discover Best</custom-tag> Home-cooked Food in Dhaka</h1>
 
-       <br>
+       <!-- <br> -->
+       <hr>
 
        <div class="card-deck">
 
@@ -218,6 +220,8 @@
         ?>
 
       </div>
+
+      <hr>
 
       <hr>
 

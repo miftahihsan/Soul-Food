@@ -1,5 +1,7 @@
 <?php
 
+  include 'hideWarning.php';
+
   include 'dbCon.php';
 
   // $email = mysqli_real_escape_string($sqlCon, $_POST['email']);
@@ -32,7 +34,7 @@
     include_once 'sessionConfig.php';
 
     // saving all the user information into session
-    $_SESSION['user_id'] = "user_id_".$row['id'];
+    $_SESSION['user_id'] = "user_".$row['id'];
     $_SESSION['user_email'] = $row['user_email'];
     $_SESSION['user_Fname'] = $row['user_first_name'];
     $_SESSION['user_Mname'] = $row['user_middle_name'];

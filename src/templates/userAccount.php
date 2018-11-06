@@ -69,7 +69,9 @@
                      <td> 10 </td>
                      <td> 260 </td>
                      <td> <custom-tag> 2600 </custom-tag> </td>
-                     <td> <button id="'.$i.'" class="btn btn-danger" type="button" name="button" onclick = "removeItem(this)" title = "remove from cart">x</button> </td>
+                     <td> <button id="'.$i.'" class="btn btn-danger fa fa-close" type="button" name="button" onclick = "removeItem(this)" title = "remove from cart"></button>
+                          <button id="confirm_purchase_'.$i.'" class="btn btn-green fa fa-check" type="button" name="button" onclick = "confirmItem(this)" title = "Confirm Purchase"></button>
+                     </td>
                    </tr>
                  </tbody>';
 

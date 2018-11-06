@@ -11,3 +11,14 @@ function inc(){
   qty_box = parseInt(qty_box) + 1;
   document.getElementById("quantity-box").value = qty_box;
 }
+
+
+// Prevents from letter insertion
+// $( "#quantity-box" ).keypress(function( event ) {
+//   if ( ( event.which < 48 || event.which > 57 ) && ( event.which != 127 && event.which != 8
+//   && event.which != 37 && event.which != 38 && event.which != 39 && event.which != 40)) {
+//
+//      event.preventDefault();
+//
+//   }
+// });
