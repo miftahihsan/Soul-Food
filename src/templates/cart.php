@@ -83,7 +83,7 @@
               </nav>
               <div class="">
                 <button type="button" title="Add to wish list" class="btn btn-primary" name="button">Add to Cart</button>
-                <button type="button" title="Mark as favourite" class="btn btn-light fa fa-heart mg-left-10 fa-font-size" name="button"></button>
+                <button type="button" title="Mark as favourite" class="btn btn-light fa fa-heart fa-blue-heart mg-left-10 fa-font-size" name="button" onclick="changeHeartColor(this);" ></button>
                 <button type="button" title="Visit out Facebook" class="btn btn-light fa fa-facebook-official mg-left-10 fa-font-size" name="button"></button>
                 <button type="button" title="Subscribe to our channel" class="btn btn-light fa fa-youtube mg-left-10 fa-font-size" name="button"></button>
                 <button type="button" title="Follow us on instagram" class="btn btn-light fa fa-instagram mg-left-10 fa-font-size" name="button"></button>
@@ -165,9 +165,11 @@
       include_once '../static/bootStrapJS.php'
      ?>
 
+     <!-- notifying library -->
+     <script type="text/javascript" src="../static/scripts/libraries/notify/notify.js"> </script>
 
      <script type="text/javascript" src="../static/scripts/quantityIncDec.js"> </script>
-
+     <script type="text/javascript" src="../static/scripts/addToFavourite.js"> </script>
 
   </body>
 

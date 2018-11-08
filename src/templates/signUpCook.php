@@ -53,15 +53,29 @@
 
         if($rows == 0){
           include '../form/cookSignUpForm.php';
-          exit();
+          // exit();
         }
 
+        else{
 
-        while($row = mysqli_fetch_assoc($query)){
-          if($row['verified'] == 0){
-            echo "<h1> Account has not been reviewed yet </h1>";
-            exit();
+          while($row = mysqli_fetch_assoc($query)){
+            if($row['verified'] == 0){
+
+              echo '<div class="container no-activity">';
+
+                // <!-- No activity div -->
+                echo '<h1 class = "text-center text-muted" style = "margin-top: 50px;" > Not Verified yet !!
+                      <br>
+                      <i style = "font-size:2em;" class="fa fa-frown-o"></i>
+                      </h1>';
+
+
+              echo '</div>';
+
+              // exit();
+            }
           }
+
         }
 
 

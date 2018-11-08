@@ -276,12 +276,21 @@ x-star-rating > .star.half-star::after{
 .mg-left-10{
   margin-left: 10px;
 }
-.fa-heart{
+.fa-blue-heart{
   color: #15a8f1;
   transition: color 1s;
 }
-.fa-heart:hover{
+.fa-blue-heart:hover{
   color: #FF0266;
+}
+
+.fa-red-heart{
+  color: #FF0266;
+  transition: color 1s;
+}
+
+.fa-red-heart:hover{
+  color: #767777;
 }
 
 /* favourite button endss here*/
@@ -291,6 +300,42 @@ x-star-rating > .star.half-star::after{
   height: 275px;
 }
 
+.fa-edit-btn{
+  position: absolute;
+  right: 0;
+}
+
+/************************************************Cook Dashboard******************************************/
+
+.post-offer-input{
+  border-radius: 25px;
+  border: 1px solid black;
+  padding: 5px 0px 5px 10px;
+  overflow-x: hidden;
+}
+
+.cook-container{
+  margin: 0 auto;
+  width: 900px;
+}
+
+.cook-profile-pic{
+  border-radius: 50%;
+}
+
+.fa-edit-btn{
+  transform: none !important;
+  background-color: white;
+}
+
+.modal-cook-profile{
+  margin: 0 auto !important;
+  width: 900px !important;
+}
+
+.modal-lg{
+  width: 90%;
+}
 /************************************************User History******************************************/
 .print-btn-container button{
   width: 100%;

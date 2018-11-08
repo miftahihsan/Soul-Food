@@ -55,6 +55,8 @@
 
    mysqli_query($sqlCon, $sqlCommand);
 
+   echo "DONE";
+
   // clsoing the sql con
   mysqli_close($sqlCon);
 

@@ -9,7 +9,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title> <?php echo $_SESSION['user_Fname']; ?> </title>
+    <title> <?php echo $_SESSION['user_Fname']." ".$_SESSION['user_Lname']; ?> </title>
 
     <!-- //incudeing the style sheets here -->
     <?php
