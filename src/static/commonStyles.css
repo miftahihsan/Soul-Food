@@ -49,9 +49,14 @@ input[type="file"]{
   /* background-color: #ebebe6; */
 }
 
+.required{
+    color: red;
+}
+
 .remove-a-dec{
   color: inherit;
 }
+
 .remove-a-dec:hover{
   text-decoration: none;
   color: inherit;

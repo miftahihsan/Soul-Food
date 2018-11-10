@@ -307,16 +307,20 @@ x-star-rating > .star.half-star::after{
 
 /************************************************Cook Dashboard******************************************/
 
-.post-offer-input{
-  border-radius: 25px;
-  border: 1px solid black;
-  padding: 5px 0px 5px 10px;
-  overflow-x: hidden;
+.post-div-state{
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+}
+
+.btn-full-width{
+  width: 100%;
 }
 
 .cook-container{
   margin: 0 auto;
   width: 900px;
+  padding: 30px;
 }
 
 .cook-profile-pic{

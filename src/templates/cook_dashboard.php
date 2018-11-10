@@ -26,6 +26,13 @@
      <link rel="stylesheet" href="../static/styles.css">
      <link rel="stylesheet" href="../static/commonStyles.css">
 
+     <!-- Tiny Mice text editor -->
+     <script src='https://devpreview.tiny.cloud/demo/tinymce.min.js'></script>
+
+
+    <!-- Tiny mice textarea link -->
+    <script type="text/javascript" src="../static/scripts/miceEditor.js"> </script>
+
   </head>
 
 
@@ -69,41 +76,43 @@
       ?>
 
       <!-- Cook can post from here -->
-      <div class="cook-container dashboard-background mb-4" style="padding:30px;">
+      <div class="cook-container dashboard-background mb-4">
 
-        <div class="row post-offer-row">
+        <!-- This is the open and close button of the post -->
+        <div class="post-div-header">
 
-          <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+          <div class="row">
 
-            <?php
-            echo '<img class="cook-profile-pic"
-            src="..\static\images\cook_folder\cook_'.$cookInfo['cook_id'].'\cook_profile_pic\\'.$cookInfo['cook_profile_pic'].' "
-             width="100%;" alt="">';
-              ?>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <h4>Create post</h4>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <i class="fa fa-plus post-div-state" onclick="displayPost(this)"></i>
+            </div>
 
           </div>
 
-          <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
-            <textarea class="post-offer-input" placeholder="Post Offer" name="name" rows="2" cols="80" width = "100%"></textarea>
-            <br>
+          <hr>
 
-            <div class="" style="padding:10px;">
+        </div>
 
-              <label class="btn-light">
-                  <input id="file-button" name = "cook-image" class="file-button" type="file" onchange="imagePreview.call(this);"
-                   accept="image/jpeg, image/png, image/jpg">
-                      <i class="fa fa-paperclip" ></i>
-              </label>
+        <div id="post-div">
 
-              <div class="" style="max-width:350px; max-height:350px;">
-                <img id = "image" src="#" width="100" alt="">
-              </div>
+          <div class="row post-offer-row">
 
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
 
-              <br>
+              <?php
+              echo '<img class="cook-profile-pic"
+              src="..\static\images\cook_folder\cook_'.$cookInfo['cook_id'].'\cook_profile_pic\\'.$cookInfo['cook_profile_pic'].' "
+               width="100%;" alt="">';
+                ?>
 
-              <button type="button" class="btn btn-primary" style="width:100%;" name="button">Share</button>
+            </div>
 
+            <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+              <?php include '../form/postOffer.php' ?>
             </div>
 
           </div>
@@ -112,12 +121,13 @@
 
       </div>
 
+      <!-- post div ends here -->
+
       <!-- Start coding from here -->
-      <div class="cook-container dashboard-background" style="padding:30px;">
+      <div class="cook-container dashboard-background">
 
         <!-- cook profile -->
         <div class="row">
-
           <!-- start of a row -->
 
           <!-- Cook profile pic -->
@@ -183,7 +193,8 @@
 
             </x-star-rating>
 
-            <button type="button" title = "Edit" class="btn btn-light fa fa-edit fa-edit-btn fa-font-size text-muted" name="button" data-toggle="modal" data-target="#exampleModalCenter"></button>
+            <button type="button" title = "Edit" class="btn btn-light fa fa-edit fa-edit-btn fa-font-size text-muted"
+            name="button" data-toggle="modal" data-target="#exampleModalCenter"></button>
             <!-- Stars end here -->
 
             <br>
@@ -201,7 +212,9 @@
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <br>
             <hr>
-            <button type="button" title = "Edit" class="btn btn-light fa fa-edit fa-edit-btn fa-font-size text-muted" name="button" data-toggle="modal" data-target="#exampleModalCenter"></button>
+            <button type="button" title = "Edit" class="btn btn-light fa fa-edit fa-edit-btn fa-font-size text-muted"
+            name="button" data-toggle="modal" data-target="#exampleModalCenter"></button>
+
             <custom-tag><h1>About Cook</h1> </custom-tag>
             <p> <?php echo $cookInfo['cook_info']; ?> </p>
           </div>
@@ -407,6 +420,9 @@
 
      <!-- Increase text area length with text lines -->
      <script type="text/javascript" src="../static/scripts/resizeTextAreaWithLines.js"> </script>
+
+     <!-- adding the toggle functionality -->
+     <script type="text/javascript" src="../static/scripts/cookDashBoard.js"></script>
 
   </body>
 

@@ -20,7 +20,7 @@
                      echo 'UPLOAD IMAGE';
              echo '</label>';
 
-             echo '<small id="emailHelp" class="form-text text-muted"> <red style="color:red;">*</red> JPEG JGP PNG only <br> 540 X 540 </small>';
+             echo '<small id="emailHelp" class="form-text text-muted"> <required class = "required">*</required> JPEG JGP PNG only <br> 540 X 540 </small>';
           echo '</div>';
 
         echo '</div>';
