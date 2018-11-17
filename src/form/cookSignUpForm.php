@@ -102,6 +102,11 @@
 
               echo "</div>";
 
+              echo "<br>";
+
+              echo '<textarea id="about-food" class="" placeholder="Post Offer" name="about-food" rows="2" cols="80" width = "100%"></textarea>';
+              echo '<small id="emailHelp" class="form-text text-muted"> <required class = "required">*</required> Must be of atleast 500 words.</small>';
+
 
               echo '<button type="submit" name = "submit" class="btn btn-primary btn-full-width">Submit</button>';
 

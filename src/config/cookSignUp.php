@@ -50,6 +50,8 @@
     $streetName = mysqli_real_escape_string($sqlCon, $_POST['streetName']);
     $postalCode = mysqli_real_escape_string($sqlCon, $_POST['postalCode']);
 
+    // About Cook
+    $aboutCook = mysqli_real_escape_string($sqlCon, $_POST['about-food']);
 
     // $Test = mysqli_real_escape_string($sqlCon, $_POST['Test']);
 
@@ -62,7 +64,8 @@
 		$cookPhotoExploded = explode('.', $cookPhotoName);
 		$cookPhotoExtension = strtolower(end($cookPhotoExploded));
 
-    echo $cookPhotoName;
+    // This was commented out
+    // echo $cookPhotoName;
 
     // If anything is left empty log user out
     // if(empty($email) || empty($firstName) || empty($middleName) ||
@@ -75,7 +78,7 @@
     // if every thing is filled up by the user
     // then proceed to register the data into the database
 
-    $sqlCommand = "SELECT *
+    $sqlCommand = " SELECT *
                     FROM cook
                     WHERE cook_email = '".$email."' ";
 
@@ -104,10 +107,10 @@
     // cook information has been entered
     $sqlCommand = " INSERT INTO cook (user_id, verified, rating, speciality,
                                       cook_email, street_name, postal_code,
-                                      cook_profile_pic)
+                                      cook_profile_pic, cook_info)
                     VALUES('".$_SESSION["user_id"]."', 0, 0, '".$speciality."',
                             '".$email."', '".$streetName."', '".$postalCode."',
-                           '".$cookPhotoName."') ";
+                           '".$cookPhotoName."', '".$aboutCook."') ";
 
     if(mysqli_query($sqlCon, $sqlCommand)){
       echo "Success";

@@ -1,7 +1,7 @@
 <?php
 
   // cook can post offers using this form
-  echo '<form method = "POST" >';
+  echo '<form method = "POST" action="../config/submitCookPost.php" enctype="multipart/form-data">';
 
     // Post name
 
@@ -46,7 +46,7 @@
 
     // image upload
     echo '<label class="upload-image-btn btn-primary">';
-        echo '<input id="file-button" name = "cook-image" class="file-button" type="file" onchange="imagePreview.call(this);"
+        echo '<input id="file-button" name = "post-image" class="file-button" type="file" onchange="imagePreview.call(this);"
          accept="image/jpeg, image/png, image/jpg">';
             echo 'UPLOAD IMAGE';
     echo '</label>';
@@ -56,12 +56,12 @@
 
     echo "<h1>Write something about post</h1>";
 
-    echo '<textarea id="about-food" class="" placeholder="Post Offer" name="name" rows="2" cols="80" width = "100%"></textarea>';
+    echo '<textarea id="about-food" class="" placeholder="Post Offer" name="about-food" rows="2" cols="80" width = "100%"></textarea>';
     echo '<small id="emailHelp" class="form-text text-muted"> <required class = "required">*</required> Must be of atleast 500 words.</small>';
 
     echo '<br>';
 
-    echo '<button id = "disable" class = "btn btn-primary btn-full-width" > POST </button>';
+    echo '<button type = "submit" id = "disable" class = "btn btn-primary btn-full-width" name = "submit-offer" > POST </button>';
 
   echo '</form>';
 

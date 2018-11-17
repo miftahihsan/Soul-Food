@@ -72,7 +72,7 @@
 
             // drop down dashboard
             echo '<li class="nav-item dropdown">';
-              echo '<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>';
+              echo '<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>';
               echo '<div class="dropdown-menu">';
                 echo '<a class="dropdown-item" href="../templates/userAccount.php">My account</a>';
                 echo '<a class="dropdown-item" href="../templates/userFavourite.php">Favourites</a>';
@@ -80,6 +80,8 @@
                 if($_SESSION['is_chef']){
                   echo '<div role="separator" class="dropdown-divider"></div>';
                   echo '<a class="dropdown-item" href="../templates/cook_dashboard.php">Cook Account</a>';
+
+                  echo '<a class="dropdown-item" href="../templates/cookPosts.php">My posts</a>';
                 }
                 // echo '<div role="separator" class="dropdown-divider"></div>';
                 // echo '<a class="dropdown-item" href="#three">three</a>';

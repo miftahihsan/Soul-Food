@@ -43,6 +43,9 @@ setInterval(function(){
     $("#dismiss-image").show('slow');
   }
 
+
+  // alert(tinyMCE.activeEditor.getContent());
+
   // knowing if the image has been uploaded or not
 
   if(postHeader != "" && postPrice != "" && wordCount >= 5 && $('#image').attr('src') != ""){

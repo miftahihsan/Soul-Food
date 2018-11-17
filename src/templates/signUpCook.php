@@ -23,6 +23,12 @@
      <link rel="stylesheet" href="../static/styles.css">
      <link rel="stylesheet" href="../static/commonStyles.css">
 
+     <!-- Tiny Mice text editor -->
+     <script src='https://devpreview.tiny.cloud/demo/tinymce.min.js'></script>
+     
+     <!-- Tiny mice textarea link -->
+     <script type="text/javascript" src="../static/scripts/miceEditor.js"> </script>
+
   </head>
 
 

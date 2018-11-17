@@ -29,7 +29,6 @@
      <!-- Tiny Mice text editor -->
      <script src='https://devpreview.tiny.cloud/demo/tinymce.min.js'></script>
 
-
     <!-- Tiny mice textarea link -->
     <script type="text/javascript" src="../static/scripts/miceEditor.js"> </script>
 
@@ -161,7 +160,7 @@
             <b>Email : &nbsp; </b> <?php echo $cookInfo["cook_email"]; ?>
             <br>
             <br>
-            <b>Phone : &nbsp; </b> 0183661619
+            <b>Phone : &nbsp; </b> <?php echo $cookInfo["cook_phone"]; ?>
 
           </div>
 
@@ -214,6 +213,7 @@
             <hr>
             <button type="button" title = "Edit" class="btn btn-light fa fa-edit fa-edit-btn fa-font-size text-muted"
             name="button" data-toggle="modal" data-target="#exampleModalCenter"></button>
+
 
             <custom-tag><h1>About Cook</h1> </custom-tag>
             <p> <?php echo $cookInfo['cook_info']; ?> </p>
@@ -403,14 +403,19 @@
       include '../_includes/_modalCookProfile.php';
     ?>
      <!-- footer -->
-     <?php
-       include_once '../_includes/_footer.php';
-      ?>
+    <?php
+      include_once '../_includes/_footer.php';
+    ?>
 
      <!-- // the css bootstrap here -->
     <?php
       include_once '../static/bootStrapJS.php'
      ?>
+
+     <!-- //This is for submitig cooks offer -->
+     <?php
+      // include '../config/submitCookPost.php';
+      ?>
 
      <!-- notifying library -->
      <script type="text/javascript" src="../static/scripts/libraries/notify/notify.js"> </script>
@@ -418,8 +423,6 @@
      <script type="text/javascript" src="../static/scripts/uploadImage.js"> </script>
      <script type="text/javascript" src="../static/scripts/addToFavourite.js"> </script>
 
-     <!-- Increase text area length with text lines -->
-     <script type="text/javascript" src="../static/scripts/resizeTextAreaWithLines.js"> </script>
 
      <!-- adding the toggle functionality -->
      <script type="text/javascript" src="../static/scripts/cookDashBoard.js"></script>

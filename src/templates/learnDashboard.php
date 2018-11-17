@@ -30,18 +30,28 @@
 
          <?php
 
-          for ($i=0; $i < 3; $i++) {
+         include_once '../config/dbCon.php';
+
+         $sqlCommand = " SELECT *
+                         FROM youtube_videos ";
+
+          $videoResults = mysqli_query($sqlCon, $sqlCommand);
+
+          // <iframe width="100%" height="315" src="https://www.youtube.com/embed/Zv8z1Ghs8DA"
+          // frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+          while($row = mysqli_fetch_assoc($videoResults)) {
             echo '<div class="video-text col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/Zv8z1Ghs8DA"
-                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    '.$row["video"].'
                   </div>
 
                   <div class="video-text col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                    <div class = "hide-text-length learn-page-ptag" style = "height:315px;">
-                      <h1>Header Here</h1>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
+
+                    <a class = "remove-a-dec" href="learnVideoDashBoard.php?v_id='.$row["video_id"].'"><div class = "hide-text-length learn-page-ptag" style = "height:315px;">
+                      <h1>'.$row["video_title"].'</h1>
+                      <p>'.$row["video_description"].'</p>
+                    </div></a>
+
                   </div>';
           }
 

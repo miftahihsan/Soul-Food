@@ -1,10 +1,10 @@
 tinymce.init({
-    selector: '#about-food',
+    selector: 'textarea',
     menubar : false,
     branding : false,
     browser_spellcheck: true,
     contextmenu: false,
-    plugins: "wordcount",
+    plugins: "wordcount textcolor",
     wordcount_cleanregex: /[0-9.(),;:!?%#$?\x27\x22_+=\\\/\-]*/g,
     image_caption: true,
 });
