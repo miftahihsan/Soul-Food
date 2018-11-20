@@ -44,9 +44,9 @@
   //                         '".$aboutFood."', 0, '".$postDiscount."') ";
 
   $sqlCommand = " INSERT INTO cook_post (cook_id, food_pic, food_title, food_description,
-                                    discount, rating)
+                                    discount, rating, price)
                   VALUES('".$rowCookInfo["cook_id"]."', '".$cookOfferPhotoName."', '".$postName."',
-                          '".$aboutFood."', '".$postDiscount."', 0) ";
+                          '".$aboutFood."', '".$postDiscount."', 0, '".$postPrice."') ";
 
 
   if(mysqli_query($sqlCon, $sqlCommand)){
@@ -65,10 +65,8 @@
 
     $dir = "../static/images/cook_folder";
 
-    // create post folder
-    mkdir($dir."/cook_".$cookId."/post_".$postID, 0777);
-    //
-    $imageDestination = $dir."/cook_".$cookId."/post_".$postID."/".$cookOfferPhotoName;
+
+    $imageDestination = $dir."/cook_".$cookId."/post//".$cookOfferPhotoName;
 
     // move the image into the created folder
     move_uploaded_file($cookOfferPhotoTempName, $imageDestination);

@@ -18,6 +18,12 @@
      <link rel="stylesheet" href="../static/styles.css">
      <link rel="stylesheet" href="../static/commonStyles.css">
 
+     <!-- checing for URL query -->
+
+     <?php
+      include_once '../config/cartPageDisplayInfo.php';
+      ?>
+
   </head>
 
 
@@ -37,12 +43,14 @@
 
              <!-- This is the div for the image -->
              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-               <img class="cart-page-image img-thumbnail" src="../static/images/curry.jpg" alt="Avatar">
+               <?php
+                echo '<img class="cart-page-image img-thumbnail" src="../static/images/cook_folder/cook_'.$cookAndFoodArray["cook_id"].'/post//'.$cookAndFoodArray["food_pic"].'" alt="Avatar">';
+                ?>
              </div>
 
              <!-- This is the div for the add o cart button and description -->
              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 card-page-title">
-               <h3>Soul Food!</h3>
+               <h3><?php echo $cookAndFoodArray["food_title"]; ?></h3>
                <!-- Stars stats from here -->
                <x-star-rating>
 
@@ -56,13 +64,16 @@
 
                <!-- Stars end here -->
 
-               <p>256 reviews | <a class="remove-a-dec" style="color:#1067f2;font-weight: 900;" href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">write a review</a> </p>
+               <p>256 reviews | <a class="remove-a-dec" style="color:#1067f2;font-weight: 900;"
+                  href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">write a review</a> </p>
 
-               <p><b>Location : </b> Dhanmondi Dhaka </p>
+               <p><b>Location : </b> <?php echo $cookAndFoodArray["street_name"]; ?> </p>
                <hr>
-               <custom-tag><h1>&#2547; 346</h1></custom-tag>
-               <p><b>Cook Name : </b> <a class="remove-a-dec" style="color:#1067f2;font-weight: 900;" href="#">Miftah Ihsan</a></p>
-               <p><b>Disocunt : </b> 50% </p>
+               <custom-tag><h1>&#2547; <?php echo $cookAndFoodArray["price"]; ?></h1></custom-tag>
+               <p><b>Cook Name : </b> <a class="remove-a-dec"
+                 style="color:#1067f2;font-weight: 900;"
+                 href="#"><?php echo $cookAndFoodArray["user_first_name"]." ".$cookAndFoodArray["user_last_name"]; ?></a></p>
+               <p><b>Disocunt : </b> <?php echo $cookAndFoodArray["discount"]; ?>% </p>
                <hr>
 
                <!-- Pagination here -->
@@ -100,8 +111,19 @@
 
          <h1 class="about-this-header">About this</h1>
          <hr>
-         <p>This is where the owner talks about the food</p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+         <div class="row">
+           <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1" style="padding-top:10px;">
+             <div class="" style="border-radius:50%; overflow:hidden; width:80px; height:80px;" >
+               <?php echo '<img style = "width:100%; height:100%;" src="../static/images/cook_folder/cook_'.$cookAndFoodArray["cook_id"].'/cook_profile_pic//'.$cookAndFoodArray["cook_profile_pic"].'" alt="">'; ?>
+             </div>
+           </div>
+           <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11" style="padding:0 20px;">
+             <br>
+             <b><?php echo "<h2 style = 'font-size:2em;' >".$cookAndFoodArray["user_first_name"]." ".$cookAndFoodArray["user_last_name"]."</h3>"; ?></b>
+             <p><?php echo $cookAndFoodArray["food_description"]; ?></p>
+           </div>
+         </div>
+
          <hr>
        </div>
 
@@ -109,39 +131,66 @@
      </div>
 
      <!-- card view here of all the high rated food of the same catagory -->
+
+
      <br>
      <h1><custom-tag> Related </custom-tag> Posts</h1>
      <hr>
      <div class="card-deck">
 
        <?php
-        for ($i=0; $i < 3; $i++) {
-          echo '<div class="card">
+       include_once '../config/displayRelatedSearch.php';
+       $count = 0;
+        while ($relatedArray = mysqli_fetch_assoc($query)) {
+          if($count == 3){
+            mysqli_close($sqlCon);
+            break;
+          }
+          if($relatedArray["post_id"] != $cookAndFoodArray["post_id"]){
+            echo '
+            <div class="card">
 
-            <a class="explore-card" href="#">
 
-              <img class="card-img-top" src="../static/images/burger.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+              <a class="explore-card" href="cart.php?PST_V='.$relatedArray["post_id"].'">
 
-                <!-- stars stats here -->
-                <x-star-rating>
-
-                  <div class="star full"></div>
-                  <div class="star full"></div>
-                  <div class="star full"></div>
-                  <div class="star"></div>
-                  <div class="star"></div>
-
-                </x-star-rating>
-                <!-- star ends here -->
+              <div style = "height:170px; overflow:hidden;" >
+                <img class="card-img-top" src="../static/images/cook_folder/cook_'.$relatedArray["cook_id"].'/post//'.$relatedArray["food_pic"].'" alt="Card image cap">
               </div>
+                <div class="overlay">
+                  <div class="text">&#2547;'.$relatedArray["price"].'</div>
+                </div>
 
-            </a>
+                <div class="card-body">
+                <h5 class="card-title"><b>'.$relatedArray["food_title"].'</b></h5>
+                <hr>
+                <div class = "hide-card-length" >
+                  <p class="card-text">'.$relatedArray["food_description"].'</p>
+                </div>
+                  <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
 
-          </div>';
+                  <hr>
+                  <!-- stars stats here -->
+                  <x-star-rating>
+
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+
+                  </x-star-rating>
+                  <!-- star ends here -->
+                </div>
+
+              </a>
+
+            </div>';
+          }
+
+          if($relatedArray["post_id"] != $cookAndFoodArray["post_id"]){
+            $count = $count + 1;
+          }
+
         }
 
         ?>
@@ -170,6 +219,12 @@
 
      <script type="text/javascript" src="../static/scripts/quantityIncDec.js"> </script>
      <script type="text/javascript" src="../static/scripts/addToFavourite.js"> </script>
+
+     <!-- ... effect -->
+     <script type="text/javascript" src="../static/scripts/libraries/jQuery.dotdotdot/dist/jquery.dotdotdot.js"></script>
+     <script type="text/javascript">
+      $(".hide-card-length").dotdotdot();
+     </script>
 
   </body>
 

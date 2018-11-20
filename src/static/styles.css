@@ -145,6 +145,45 @@ p{
    justify-content: center;
   }
 
+/************************************************About Page******************************************/
+.about{
+  padding: 60px;
+}
+hr.style-seven {
+  overflow: visible;
+  height: 30px; border-style: solid; border-color: black;
+  border-width: 1px 0 0 0; border-radius: 20px;
+}
+hr.style-seven:before {
+  display: block; content: "";
+  height: 30px; margin-top: -31px;
+  border-style: solid; border-color:
+  black; border-width: 0 0 1px 0;
+  border-radius: 20px;
+}
+.about-banner{
+  height: 400px;
+  overflow: hidden;
+  /* background-color: red; */
+}
+.about-image{
+  -webkit-filter: brightness(50%);
+}
+.about-banner img{
+  width: 100%;
+}
+.container-about{
+  width: 700px;
+  margin: 0 auto;
+}
+.about-banner h1{
+  margin-top: 12%;
+  font-size: 7em;
+  position: absolute;
+  color: white;
+  z-index: 1;
+}
+
 /************************************************Explore Page******************************************/
 .tales {
   width: 100%;
@@ -152,6 +191,9 @@ p{
 .carousel-inner{
   width:100%;
   max-height: 400px !important;
+}
+.hide-card-length{
+  height: 150px;
 }
 /* This was used for card view slow fadeout hover */
 /* .card{

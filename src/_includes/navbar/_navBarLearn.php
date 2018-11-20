@@ -63,7 +63,7 @@
             }
 
             echo '<li class="nav-item active">';
-              echo '<a class="nav-link not-active" href="#">About</a>';
+              echo '<a class="nav-link not-active" href="../templates/aboutPage.php">About</a>';
             echo '</li>';
 
             // drop down dashboard
@@ -145,7 +145,7 @@
             echo '</li>';
 
             echo '<li class="nav-item active">';
-              echo '<a class="nav-link not-active" href="#">About</a>';
+              echo '<a class="nav-link not-active" href="../templates/aboutPage.php">About</a>';
             echo '</li>';
 
             echo '<li class="nav-item active">';

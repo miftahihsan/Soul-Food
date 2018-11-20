@@ -50,11 +50,11 @@
           echo '<ul class="navbar-nav ml-auto custom-navbar-items">';
 
             echo '<li class="nav-item active">';
-              echo '<a class="nav-link not-active" href="#">Learn!!<span class="sr-only">(current)</span></a>';
+              echo '<a class="nav-link" href="../templates/learnDashboard.php">Learn!!<span class="sr-only">(current)</span></a>';
             echo '</li>';
 
             echo '<li class="nav-item active">';
-              echo '<a class="nav-link not-active" href="#">Explore<span class="sr-only">(current)</span></a>';
+              echo '<a class="nav-link not-active" href="../templates/explorePage.php">Explore<span class="sr-only">(current)</span></a>';
             echo '</li>';
 
             if(!$_SESSION['is_chef']){
@@ -64,16 +64,16 @@
             }
 
             echo '<li class="nav-item active">';
-              echo '<a class="nav-link active-tab" href="#">About</a>';
+              echo '<a class="nav-link not-active " href="#">About</a>';
             echo '</li>';
 
             // drop down dashboard
             echo '<li class="nav-item dropdown">';
               echo '<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>';
               echo '<div class="dropdown-menu">';
-                echo '<a class="dropdown-item" href="../templates/userAccount.php">My account</a>';
-                echo '<a class="dropdown-item" href="#">Favourites</a>';
-                echo '<a class="dropdown-item" href="#">History</a>';
+              echo '<a class="dropdown-item" href="../templates/userAccount.php">My account</a>';
+              echo '<a class="dropdown-item" href="../templates/userFavourite.php">Favourites</a>';
+              echo '<a class="dropdown-item" href="../templates/userHistory.php">History</a>';
                 if($_SESSION['is_chef']){
                   echo '<div role="separator" class="dropdown-divider"></div>';
                   echo '<a class="dropdown-item" href="../templates/cook_dashboard.php">Cook Account</a>';
@@ -86,7 +86,7 @@
             echo '</li>';
 
             echo '<li class="nav-item active">';
-              echo '<a class="nav-link" href="#">Logout</a>';
+              echo '<a class="nav-link" href="../templates/loginPage.php">Logout</a>';
             echo '</li>';
 
           echo '</ul>';
@@ -146,7 +146,7 @@
             echo '</li>';
 
             echo '<li class="nav-item active">';
-              echo '<a class="nav-link active-tab" href="#">About</a>';
+              echo '<a class="nav-link not-active active-tab" href="#">About</a>';
             echo '</li>';
 
             echo '<li class="nav-item active">';

@@ -48,7 +48,7 @@ setInterval(function(){
 
   // knowing if the image has been uploaded or not
 
-  if(postHeader != "" && postPrice != "" && wordCount >= 5 && $('#image').attr('src') != ""){
+  if(postHeader != "" && postPrice != "" && wordCount >= 30 && $('#image').attr('src') != "" && $('#cusine').value != ""){
     $("#disable").prop("disabled",false);
   }
   else{

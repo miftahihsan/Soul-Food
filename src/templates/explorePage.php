@@ -88,40 +88,55 @@
 
          <?php
 
-          for ($i=0; $i < 3; $i++) {
-            echo '
-            <div class="card">
+         include_once '../config/explorePagePosts.php';
+
+          $displayCount = 0;
+          while ($postRow = mysqli_fetch_assoc($query)) {
+
+            if($displayCount < 3){
+              echo '
+              <div class="card">
 
 
-              <a class="explore-card" href="cart.php">
+                <a class="explore-card" href="cart.php?PST_V='.$postRow["post_id"].'">
 
-                <img class="card-img-top" src="../static/images/burger.jpg" alt="Card image cap">
-                <div class="overlay">
-                  <div class="text">&#2547; 346</div>
-                </div>
+                  <div style = "height:170px; overflow:hidden;" >
+                    <img class="card-img-top" src="../static/images/cook_folder/cook_'.$postRow["cook_id"].'/post//'.$postRow["food_pic"].'" alt="Card image cap">
+                  </div>
 
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                  <div class="overlay">
+                    <div class="text">&#2547;'.$postRow["price"].'</div>
+                  </div>
 
-                  <hr>
-                  <!-- stars stats here -->
-                  <x-star-rating>
+                  <div class="card-body">
+                    <h5 class="card-title"><b>'.$postRow["food_title"].'</b></h5>
+                    <hr>
+                    <div class = "hide-card-length" >
+                      <p class="card-text">'.$postRow["food_description"].'</p>
+                    </div>
+                    <hr>
+                    <!-- stars stats here -->
+                    <x-star-rating>
 
-                    <div class="star full"></div>
-                    <div class="star full"></div>
-                    <div class="star full"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
+                      <div class="star full"></div>
+                      <div class="star full"></div>
+                      <div class="star full"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
 
-                  </x-star-rating>
-                  <!-- star ends here -->
-                </div>
+                    </x-star-rating>
+                    <!-- star ends here -->
+                  </div>
 
-              </a>
+                </a>
 
-            </div>';
+              </div>';
+            }
+            $displayCount = $displayCount+1;
+            if($displayCount == 3){
+              break;
+            }
+
           }
 
           ?>
@@ -133,42 +148,54 @@
       <div class="card-deck">
 
         <?php
-
-        for ($i=0; $i < 3; $i++) {
-          echo '
-          <div class="card">
+          $displayCount = 0;
+          while($postRow = mysqli_fetch_assoc($query)) {
 
 
-            <a class="explore-card" href="cart.php">
+                echo '
+                <div class="card">
 
-              <img class="card-img-top" src="../static/images/pizza.jpg" alt="Card image cap">
-              <div class="overlay">
-                <div class="text">&#2547; 346</div>
-              </div>
+                  <a class="explore-card" href="cart.php?PST_V='.$postRow["post_id"].'">
 
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                  <div style = "height:170px; overflow:hidden;" >
+                    <img class="card-img-top" src="../static/images/cook_folder/cook_'.$postRow["cook_id"].'/post//'.$postRow["food_pic"].'" alt="Card image cap">
+                  </div>
+                    <div class="overlay">
+                      <div class="text">&#2547;'.$postRow["price"].'</div>
+                    </div>
 
-                <hr>
-                <!-- stars stats here -->
-                <x-star-rating>
+                    <div class="card-body">
+                    <h5 class="card-title"><b>'.$postRow["food_title"].'</b></h5>
+                    <hr>
+                    <div class = "hide-card-length" >
+                      <p class="card-text">'.$postRow["food_description"].'</p>
+                    </div>
+                      <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
 
-                  <div class="star full"></div>
-                  <div class="star full"></div>
-                  <div class="star full"></div>
-                  <div class="star"></div>
-                  <div class="star"></div>
+                      <hr>
+                      <!-- stars stats here -->
+                      <x-star-rating>
 
-                </x-star-rating>
-                <!-- star ends here -->
-              </div>
+                        <div class="star full"></div>
+                        <div class="star full"></div>
+                        <div class="star full"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
 
-            </a>
+                      </x-star-rating>
+                      <!-- star ends here -->
+                    </div>
 
-          </div>';
-        }
+                  </a>
+
+                </div>';
+                $displayCount = $displayCount+1;
+                if($displayCount == 3){
+                  break;
+                }
+
+            }
+
 
          ?>
 
@@ -180,42 +207,53 @@
      <div class="card-deck">
 
        <?php
+       $displayCount = 0;
+       while($postRow = mysqli_fetch_assoc($query)) {
+           echo '
+           <div class="card">
 
-       for ($i=0; $i < 3; $i++) {
-         echo '
-         <div class="card">
 
+             <a class="explore-card" href="cart.php?PST_V='.$postRow["post_id"].'">
 
-           <a class="explore-card" href="cart.php">
-
-             <img class="card-img-top" src="../static/images/curry.jpg" alt="Card image cap">
-             <div class="overlay">
-               <div class="text">&#2547; 346</div>
+             <div style = "height:170px; overflow:hidden;" >
+               <img class="card-img-top" src="../static/images/cook_folder/cook_'.$postRow["cook_id"].'/post//'.$postRow["food_pic"].'" alt="Card image cap">
              </div>
+               <div class="overlay">
+                 <div class="text">&#2547;'.$postRow["price"].'</div>
+               </div>
 
-             <div class="card-body">
-               <h5 class="card-title">Card title</h5>
-               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-               <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
-
+               <div class="card-body">
+               <h5 class="card-title"><b>'.$postRow["food_title"].'</b></h5>
                <hr>
-               <!-- stars stats here -->
-               <x-star-rating>
+               <div class = "hide-card-length" >
+                 <p class="card-text">'.$postRow["food_description"].'</p>
+               </div>
+                 <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
 
-                 <div class="star full"></div>
-                 <div class="star full"></div>
-                 <div class="star full"></div>
-                 <div class="star"></div>
-                 <div class="star"></div>
+                 <hr>
+                 <!-- stars stats here -->
+                 <x-star-rating>
 
-               </x-star-rating>
-               <!-- star ends here -->
-             </div>
+                   <div class="star full"></div>
+                   <div class="star full"></div>
+                   <div class="star full"></div>
+                   <div class="star"></div>
+                   <div class="star"></div>
 
-           </a>
+                 </x-star-rating>
+                 <!-- star ends here -->
+               </div>
 
-         </div>';
-       }
+             </a>
+
+           </div>';
+           $displayCount = $displayCount+1;
+           if($displayCount == 3){
+             break;
+           }
+         }
+
+         mysqli_close($sqlCon);
 
         ?>
 
@@ -236,6 +274,10 @@
       include_once '../static/bootStrapJS.php'
      ?>
 
+     <script type="text/javascript" src="../static/scripts/libraries/jQuery.dotdotdot/dist/jquery.dotdotdot.js"></script>
+     <script type="text/javascript">
+      $(".hide-card-length").dotdotdot();
+     </script>
 
   </body>
 

@@ -54,10 +54,29 @@
 
     echo '<br>';
 
+    // cusine
+    $fileDir = "../serverFile/cusine/cusineList.txt";
+    $cusineFile = fopen($fileDir, "r") or die("failed");
+
+    if($cusineFile){
+      $cusineList = explode("\n", fread($cusineFile, filesize($fileDir)));
+    }
+
+
+    echo '<select id="cusine" class="custom-select" name = "cusine">';
+    echo '<option  value = "" selected>Select cusine type</option>';
+    // for ($i=0; $i < count($cusineList); $i++) {
+    //   echo '<option value="'.$i.'">'.$cusineList[i].'</option>';
+    // }
+    echo '</select>';
+    echo '<small id="emailHelp" class="form-text text-muted"> <required class = "required">*</required>required field. </small>';
+
+    echo "<br>";
+
     echo "<h1>Write something about post</h1>";
 
     echo '<textarea id="about-food" class="" placeholder="Post Offer" name="about-food" rows="2" cols="80" width = "100%"></textarea>';
-    echo '<small id="emailHelp" class="form-text text-muted"> <required class = "required">*</required> Must be of atleast 500 words.</small>';
+    echo '<small id="emailHelp" class="form-text text-muted"> <required class = "required">*</required> Must be of atleast 30 words.</small>';
 
     echo '<br>';
 

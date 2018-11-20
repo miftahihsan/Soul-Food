@@ -135,6 +135,10 @@
       createFolder($dir."/".$row['cook_id'], $row['cook_id'], $dir);
       $finalDestination = $dir."/cook_".$row['cook_id']."/cook_profile_pic"."/".$cookPhotoName;
 
+      // makiing the post folder
+      mkdir($dir."/cook_".$cook_id."/post", 0777);
+
+
     }
 
     // move the image into the created folder
