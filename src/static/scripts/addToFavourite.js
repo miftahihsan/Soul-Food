@@ -1,4 +1,9 @@
-function changeHeartColor(event){
+function changeHeartColor(event, login_status){
+
+  if(login_status == false){
+    window.location.replace("http://localhost/cse_471_porject/src/templates/loginPage.php");
+  }
+
   if($(event).hasClass('fa-blue-heart')){
 
    $(event).removeClass('fa-blue-heart');
@@ -20,3 +25,16 @@ function changeHeartColor(event){
 
   }
 }
+
+
+// function checkLoginStatus(event, elem){
+//
+//   if(event == false){
+//     window.location.replace("http://localhost/cse_471_porject/src/templates/loginPage.php");
+//   }else{
+//     // user is logged in
+//     var post_id = $(elem).attr('id');
+//     var user_id = ''<?php echo $_SESSION["user_id"];?>';
+//     alert( user_id );
+//   }
+// }

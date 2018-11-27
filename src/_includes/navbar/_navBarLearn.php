@@ -68,7 +68,7 @@
 
             // drop down dashboard
             echo '<li class="nav-item dropdown">';
-              echo '<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>';
+              echo '<a class="nav-link not-active dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>';
               echo '<div class="dropdown-menu">';
               echo '<a class="dropdown-item" href="../templates/userAccount.php">My account</a>';
               echo '<a class="dropdown-item" href="../templates/userFavourite.php">Favourites</a>';
@@ -76,7 +76,7 @@
                 if($_SESSION['is_chef']){
                   echo '<div role="separator" class="dropdown-divider"></div>';
                   echo '<a class="dropdown-item" href="../templates/cook_dashboard.php">Cook Account</a>';
-
+                  echo '<a class="dropdown-item" href="../templates/cookOrders.php">Orders</a>';
                   echo '<a class="dropdown-item" href="../templates/cookPosts.php">My posts</a>';
                 }
                 // echo '<div role="separator" class="dropdown-divider"></div>';
@@ -85,7 +85,7 @@
             echo '</li>';
 
             echo '<li class="nav-item active">';
-              echo '<a class="nav-link" href="../templates/loginPage.php">Logout</a>';
+              echo '<a class="nav-link not-active" href="../templates/loginPage.php">Logout</a>';
             echo '</li>';
 
           echo '</ul>';

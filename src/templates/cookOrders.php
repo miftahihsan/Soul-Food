@@ -36,6 +36,11 @@
      <div class="mb-4">
 
      </div>
+     <!-- display user cart -->
+     <?php
+      include_once '../config/queryCookOrders.php'
+     ?>
+
      <!-- Code here... -->
      <!-- This is only for empty carts -->
      <!-- <div class="no-activity">
@@ -45,20 +50,23 @@
      <div class="container">
 
 
-       <!-- display user cart -->
-       <?php include_once '../config/queryUserCart.php' ?>
 
-       <table id="myTable" class="table table-bordered table-hover hadow p-3 mb-5 bg-white rounded text-center">
+
+       <table id="myTable" class="table table-bordered hadow p-3 mb-5 bg-white rounded text-center">
 
          <thead class="thead-dark" >
            <tr>
-             <th scope="col" ></th>
+             <th scope="col" >Customer Name</th>
+             <th scope="col" >Address</th>
+             <th scope="col" >Email</th>
+             <th scope="col" >Phone#</th>
              <th scope="col" >Food Name</th>
              <th scope="col" >Quantity</th>
              <th scope="col" >Unit Price(&#2547;)</th>
              <th scope="col" >Discount(%)</th>
              <th scope="col" >Total Price(&#2547;)</th>
-             <th scope="col" >Remove</th>
+             <th scope="col" >Order Date</th>
+             <th scope="col" >Confirm/Remove</th>
            </tr>
          </thead>
 
@@ -71,27 +79,26 @@
 
              echo '<tbody>
                      <tr id = "table_row_'.$i.'" >
-                       <th> <img id = "my_cart_img_'.$i.'" class="img-thumbnail" src="../static/images/cook_folder/cook_'.$userCartArray["cook_id"].'//post/'.$userCartArray["food_pic"].'" width="100px" alt=""> </th>
+                       <td> <b> '.$userCartArray["user_first_name"].' '.$userCartArray["user_last_name"].' </b> </td>
+                       <td> <b> '.$userCartArray["user_street_address"].' '.$userCartArray["user_postal_code"].'</b> </td>
+                       <td> <b> '.$userCartArray["user_email"].' </b> </td>
+                       <td> <b> '.$userCartArray["user_phone_number"].' </b> </td>
                        <td> <b> '.$userCartArray["item"].' </b> </td>
                        <td> '.$userCartArray["quantity"].' </td>
                        <td> '.$userCartArray["unit_price"].'</td>
-                      <td> <b style = "color:#e82c3e;" >('.$userCartArray["discount"].')</b></td>
-                       <td> <custom-tag> '.$priceAfterDiscount.' </custom-tag> </td>';
+                       <td> <b style = "color:#e82c3e;" >('.$userCartArray["discount"].')</b></td>
+                       <td> <custom-tag> '.$priceAfterDiscount.' </custom-tag> </td>
+                       <td> '.$userCartArray["order_placed_date"].'</td>';
 
 
                  echo '<td id = "'.$i.'" >';
-                      if($userCartArray["purchased"] == 0){
-                          echo '<button id="remove_'.$userCartArray["cart_id"].'_'.$i.'" class="btn btn-danger fa fa-close" type="button" name="button" onclick = "removeItem(this)" title = "remove from cart"></button>
-                          <button id="confirm_purchase_'.$userCartArray["cart_id"].'_'.$i.'" class="btn btn-green fa fa-check" type="button" name="button" onclick = "confirmPurchase(this)" title = "Confirm Purchase"></button>';
-                      }
-                      else if($userCartArray["purchased"] == 500) {
-                        echo 'Your order was cancled <br>
-                        <button id="remove_'.$userCartArray["cart_id"].'_'.$i.'" class="btn btn-danger fa fa-close" type="button" name="button" onclick = "removeItem(this)" title = "remove from cart"></button>
-                        ';
-                      }
-                      else{
-                          echo "Waiting for <br> order <br> confirmation";
-                      }
+                      // if($userCartArray["purchased"] == 0){
+                      echo '<button id="remove_'.$userCartArray["cart_id"].'_'.$i.'" class="btn btn-danger fa fa-close" type="button" name="button" onclick = "cookCancelOrder(this)" title = "remove from cart"></button>
+                      <button id="confirm_purchase_'.$userCartArray["cart_id"].'_'.$i.'" class="btn btn-green fa fa-check" type="button" name="button" onclick = "cookConfirmPurchase(this)" title = "Confirm Purchase"></button>';
+                      // }
+                      // else {
+                      //   echo "Waiting for <br> order <br> confirmation";
+                      // }
                  echo '</td>';
 
               echo '</tr>
@@ -107,44 +114,6 @@
 
        <hr>
 
-       <h1> Check out some more  <custom-tag>Delicious</custom-tag> dishes here!!</h1>
-
-       <!-- Related Search -->
-       <div class="card-deck">
-
-         <?php
-          for ($i=0; $i < 3; $i++) {
-            echo '<div class="card">
-
-              <a class="explore-card" href="#">
-
-                <img class="card-img-top" src="../static/images/burger.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
-
-                  <!-- stars stats here -->
-                  <x-star-rating>
-
-                    <div class="star full"></div>
-                    <div class="star full"></div>
-                    <div class="star full"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-
-                  </x-star-rating>
-                  <!-- star ends here -->
-                </div>
-
-              </a>
-
-            </div>';
-          }
-
-          ?>
-
-      </div>
 
      </div>
 
@@ -163,7 +132,7 @@
     <!-- check why the remove from script is not working later -->
     <script type="text/javascript">
 
-      function removeItem(event){
+      function cookCancelOrder(event){
         // alert($(event).attr('id'));
         var delete_row = $(event).attr('id');
 
@@ -175,8 +144,9 @@
 
           $.ajax({
                type: 'POST',
-               url: '../config/removeFromCart.php',
+               url: '../config/cookCancelOrder.php',
                data: {
+                 // this is post_id
                  cart_id: array[1]
                },
                success: function(response) {
@@ -204,28 +174,33 @@
       }
 
 
-      function confirmPurchase(event){
+      function cookConfirmPurchase(event){
 
         var confirm_row = $(event).attr('id');
         var remove_button = confirm_row.replace("confirm_purchase", "remove");
 
         var array = confirm_row.split("_");
         // confirm purchase
-        if(confirm("Are you sure you want purchase this item?")){
+        //
+        // alert(confirm_row);
+        // alert(array[2]);
+
+        if(confirm("Are you sure you want confirm this order?")){
 
           $.ajax({
                type: 'POST',
-               url: '../config/confirmPurchase.php',
+               url: '../config/cookConfirmOrder.php',
                data: {
+                 // this is post id
                  cart_id: array[2]
                },
                success: function(response) {
-                   $.notify("Order has been placed", "success");
+                   $.notify("Order has been Confirmed", "success");
 
 
                    $("#"+confirm_row+"").remove();
                    $("#"+remove_button+"").remove();
-                   $("#"+array[3]).html('Waiting for <br> order <br> confirmation');
+                   $("#"+array[3]).html('Order cofirmed');
                    // alert($(event).closest('td').attr('id'));
                    // $("#confirm_purchase_"+array[3]+"").animate({'line-height':0},1000).hide(1);
                    // $("#"+array[3]+"").animate({'line-height':0},1000).hide(1);
@@ -235,7 +210,7 @@
                  alert(error);
                  alert(xhr);
                  alert(error);
-                 $.notify("Failed to purchase", "error");
+                 $.notify("Failed to confirm order", "error");
                }
            });
 

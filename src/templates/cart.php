@@ -93,8 +93,8 @@
                 </ul>
               </nav>
               <div class="">
-                <button type="button" title="Add to wish list" class="btn btn-primary" name="button">Add to Cart</button>
-                <button type="button" title="Mark as favourite" class="btn btn-light fa fa-heart fa-blue-heart mg-left-10 fa-font-size" name="button" onclick="changeHeartColor(this);" ></button>
+                <?php echo '<button type="button" title="Add to wish list" id = "'.$cookAndFoodArray["post_id"].'" class="btn btn-primary" name="button" onclick="checkLoginStatus('.$_SESSION['logged_in'].' ,this);">Add to Cart</button>'; ?>
+                <?php echo '<button type="button" title="Mark as favourite" class="btn btn-light fa fa-heart fa-blue-heart mg-left-10 fa-font-size" name="button" onclick="changeHeartColor(this, '.$_SESSION['logged_in'].');" ></button>'; ?>
                 <button type="button" title="Visit out Facebook" class="btn btn-light fa fa-facebook-official mg-left-10 fa-font-size" name="button"></button>
                 <button type="button" title="Subscribe to our channel" class="btn btn-light fa fa-youtube mg-left-10 fa-font-size" name="button"></button>
                 <button type="button" title="Follow us on instagram" class="btn btn-light fa fa-instagram mg-left-10 fa-font-size" name="button"></button>
@@ -109,7 +109,7 @@
 
            <hr>
 
-         <h1 class="about-this-header">About this</h1>
+         <custom-tag><h1 class="about-this-header">About this</h1></custom-tag>
          <hr>
          <div class="row">
            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1" style="padding-top:10px;">
@@ -224,6 +224,48 @@
      <script type="text/javascript" src="../static/scripts/libraries/jQuery.dotdotdot/dist/jquery.dotdotdot.js"></script>
      <script type="text/javascript">
       $(".hide-card-length").dotdotdot();
+     </script>
+
+     <script type="text/javascript">
+
+     function checkLoginStatus(event, elem){
+       // alert(event);
+       if(event == false){
+         $.notify("Please login before adding to cart", "error");
+         // window.location.replace("http://localhost/cse_471_porject/src/templates/loginPage.php");
+         // $.notify("You must have an account!", "error");
+       }else{
+         // user is logged in
+
+           var post_id = $(elem).attr('id');
+           var user_id = '<?php echo $_SESSION["user_id"];?>';
+           var quantity = $("#quantity-box").val();
+
+           if(quantity == 0){
+             $.notify("Please select quantity", "error");
+             return;
+           }
+
+           $.ajax({
+                type: 'POST',
+                url: '../config/addToCart.php',
+                data: {
+                  post_id: post_id,
+                  user_id: user_id,
+                  quantity: quantity
+                },
+                success: function(response) {
+                    $.notify("Added to Cart", "success");
+                },
+                error: function(xhr, status, error) {
+
+                  $.notify("Failed to add to cart", "error");
+                }
+            });
+
+         }
+       }
+
      </script>
 
   </body>

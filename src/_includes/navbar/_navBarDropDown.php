@@ -75,7 +75,7 @@
               if($_SESSION['is_chef']){
                 echo '<div role="separator" class="dropdown-divider"></div>';
                 echo '<a class="dropdown-item" href="../templates/cook_dashboard.php">Cook Account</a>';
-
+                echo '<a class="dropdown-item" href="../templates/cookOrders.php">Orders</a>';
                 echo '<a class="dropdown-item" href="../templates/cookPosts.php">My posts</a>';
               }
               // echo '<div role="separator" class="dropdown-divider"></div>';

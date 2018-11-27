@@ -8,7 +8,9 @@ body{
 
   /* Background image */
   background: url(images/background/background.jpg) repeat left top;
+  /* background-color: red; */
 }
+
 
 p{
   text-align: justify;
@@ -383,13 +385,15 @@ x-star-rating > .star.half-star::after{
   width: 90%;
 }
 /************************************************User History******************************************/
-.print-btn-container button{
-  width: 100%;
-}
 
 /************************************************footer design******************************************/
 .footer{
+  padding: 30px;
+  text-align: center;
   margin-top: 50px;
   height: 300px;
-  background-color: #808b96;
+  color: White;
+}
+.sponsor-icon{
+  font-size: 8em;
 }
